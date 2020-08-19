@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CLOCK PRO</title>
+<link rel="icon" href="11.jpg">
+<style>
+body{
+        background-image: url(11.jpg);
+        background-size:cover;
+    }
+.m1{
+    height: 20vh;
+    width:20vw;
+    border:3px solid blue;
+    margin:auto;
+    border-radius:10px;
+    margin-top:200px;
+position: relative;
+background-color: black;
+ 
+}
+.sh2{
+    bottom: 0;
+background-color: black;
+
+    position: absolute;
+    height:8vh;
+    width:100%;
+    /* border:1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* font-weight: normal; */
+    font-size:25px;
+    font-family:calibri;
+    color: white;
+}
+.sh1{
+    background-color: black;
+    position: absolute;
+    top: 0;
+    height:8vh;
+    width:100%;
+    /* border:1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.sp1{color:red;
+    font-size:17px;
+background-color: black;
+
+}
+</style>
+</head>
+<body>
+<div class="m1"></div>
+</body>
+<script>
+    setInterval(clock,1000)
+function clock(){
+var date=new Date();
+var sec=date.getSeconds();
+var min=date.getMinutes();
+var h=date.getHours();
+var m=date.getDay();
+var mo=date.getMonth();
+var ye=date.getFullYear();
+var arr3=["12","01","02","03","04","05","06","07","08","09","10","11","12","01","02","03","04","05","06","07","08","09","10","11"]
+var arr=["Sun","Mon","Tues","Wed","Thrus","Fri","Satur"]
+var arr2=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+h=add(h)
+sec=add(sec)
+document.getElementsByClassName('m1')[0].innerHTML=`<h1 class="sh1">${arr3[h]}:${min}:${sec}<span class="sp1">pm</span></h1><h1 class="sh2">${arr[m]}/${arr2[mo]}/${ye}</h1>`
+}
+function add(k){
+if(k<10){
+return'0'+k
+}
+else{
+return k
+}
+}
+
+</script>
+</html>

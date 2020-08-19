@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="11.jpg">
+    <title>Clock-2</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+}
+.main{
+    width:100%;
+    height:100vh;
+    /* border: 4px solid red; */
+    display: flex;
+    justify-content: center;
+    background-image: url('12.jpg');
+    background-size:100% 100%;
+}
+.c1{
+    height:90vh;
+    width:40vw;
+    /* border:1px solid black; */
+    background-image: url('i.png');
+    background-size:100% 100%;
+    position: relative;
+top:9.7%;
+}
+.mobile{
+    /* border:1px solid cyan; */
+    height:70vh;
+    width:18.7vw;
+    position: absolute;
+    top:9.7%;
+    left:11.8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#mb{
+    height:30vh;
+    width:10vw;
+    /* border:1px solid white; */
+    position: relative;
+}
+.sh2{
+    color:white;
+    font-family:calibri;
+    font-weight: normal;
+}
+.sh1{
+    color:white;
+    font-family:calibri;
+    font-weight: normal;
+    font-size:45px;
+  
+}
+.sp1{
+    font-size:20px;
+    color:red;
+}
+.sh3{
+    color: white;
+    font-weight: normal;
+    font-family:calibri;
+    font-size:30px;
+}
+</style>
+</head>
+<body>
+<div class="main">
+<div class="c1">
+<div class="mobile">
+<div id="mb">
+<div class="bm"></div>
+</div>
+</div>
+</div>
+</div> 
+</body>
+<script>
+setInterval(clock,1000)
+function clock(){
+var date=new Date();
+var day=date.getDay();
+var month=date.getMonth();
+var year=date.getFullYear();
+var m=date.getMinutes();
+var h=date.getHours();
+var s=date.getSeconds();
+var arr3=["12","1","2","3","4","5","6","7","8","9","10","11","12","1","2","3","4","5","6","7","8","9","10","11"]
+var arr=["Sun","Mon","Tues","Wed","Thrus","Fri","Satur"]
+var arr2=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+document.getElementById('mb').innerHTML=`<h2 class="sh2">${arr[day]}/${arr2[month]}/${year}</h2><br><h1 class="sh1">'28<span class="sp1">%Temp</span></h1><br><h3 class="sh3">${arr3[h]}:${m}:${s}<span class="sp1">PM</span></h3>`
+}
+</script>
+</html>

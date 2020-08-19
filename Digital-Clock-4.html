@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clock-4</title>
+<link rel="icon" href="14.jpg">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.main{
+    height:99.7vh;
+    width:100%;
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: center;
+    background-image: url(13.jpg);
+    background-size:100% 100%;
+    align-items: center;
+}
+.child{
+    height:90%;
+    width:90vh;
+    border:2px solid silver;
+    display: flex;
+    border-radius:10px;
+    justify-content: center;
+    align-items: center;
+    background-image: url(13.jpg);
+    background-size:100% 100%;
+}
+
+#clock{
+    font-family: 'Dancing Script', cursive;
+    width:30vw;
+    height:50vh;
+    border:2px solid silver;
+    border-radius:10px;
+    background-color: teal;
+}
+.p1{
+    height:15vh;
+    width:100%;
+    /* border:1px solid blue; */
+    font-size:30px;
+    background-color: gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sp1{
+    font-size:20px;
+    color:red;
+}
+.p2{
+    height:15vh;
+    width:100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:40px;
+    color: white;
+}
+.p3{
+    height:15vh;
+    width:100%;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:40px;
+    color: white;
+}
+</style>
+</head>
+<body>
+<div class="main">
+<div class="child">
+<div id="clock"></div>
+</div>
+</div> 
+</body>
+<script>
+setInterval(clock,1000)
+function clock(){
+var date=new Date();
+var day=date.getDay();
+var month=date.getMonth();
+var year=date.getFullYear();
+var hour=date.getHours();
+var min=date.getMinutes();
+var sec=date.getSeconds();
+var arr3=["12","1","2","3","4","5","6","7","8","9","10","11","12","1","2","3","4","5","6","7","8","9","10","11"]
+var arr=["Sun","Mon","Tues","Wed","Thrus","Fri","Satur"]
+var arr2=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+min=add(min)
+sec=add(sec)
+document.getElementById('clock').innerHTML=`<h1 class="p2">${arr3[hour]}:${min}:${sec}<span class="sp1">pm</span></h1><br><p class="p1">${arr[day]}/${arr2[month]}/${year}</p><br><h1 class="p3">${sec}<span class="sp1">sec</span></h1>`
+}
+function add(k){
+if(k<10){
+return'0'+k
+}
+else{
+return k
+}
+}
+
+</script>
+</html>

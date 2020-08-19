@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+
+   </style>
+</head>
+<body>
+<input type="text" placeholder="entewr your age">
+<button onclick="d1()">calulate</button>
+<div class="d1"></div>
+<div class="d1"></div>
+<div class="d1"></div>
+<div class="d1"></div>
+<div class="d1"></div>
+<div class="d1"></div>
+<div class="d1"></div>
+</body>
+<script>
+function d1(){
+var x=document.getElementsByTagName('input')[0].value
+document.getElementsByClassName('d1')[0].innerHTML=`your age is : ${x}`
+var m=x*12
+document.getElementsByClassName('d1')[1].innerHTML=`your month is : ${m}`
+var h=m*365
+document.getElementsByClassName('d1')[3].innerHTML=`your hour is : ${h}`
+var min=h*60
+document.getElementsByClassName('d1')[4].innerHTML=`your minuts is : ${min}`
+var sec=min*60
+document.getElementsByClassName('d1')[5].innerHTML=`your sec is : ${sec}`
+var da=m*24
+document.getElementsByClassName('d1')[6].innerHTML=`your day is : ${da}`
+
+
+
+
+}
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <link rel="icon" href="4.jpg">
+<style>
+.clock{
+    height:40vh;
+    width:30vw;
+    border:2px solid silver;
+    margin: auto;
+    margin-top:10%;
+    position: relative;
+    background-image: url(4.jpg);
+    background-size:100% 100%;
+    border-radius: 10px;
+}
+.sh1{
+    font-size:50px;
+    font-family:calibri;
+    font-weight: normal;
+    color:white;
+    /* border:1px solid black; */
+    position: absolute;
+    left: 27%;
+
+}
+.sh2{
+    font-size:30px;
+    color:silver;
+    position: absolute;
+    bottom: 5%;
+    /* border:1px solid black; */
+    font-family:calibri;
+    left:28%;
+}
+.sp1{
+    color: red;
+    font-size:20px;
+}
+</style>
+</head>
+<body>
+<div class="clock"></div>  
+</body>
+<script>
+var a=document.body.style;
+a.backgroundImage='url(12.jpg)';
+a.backgroundSize='cover';
+setInterval(clock,1000)
+function clock(){
+var date=new Date();
+var sec=date.getSeconds();
+var min=date.getMinutes();
+var hour=date.getHours();
+var month=date.getMonth();
+var day=date.getDate();
+var da=date.getDay();
+var dat=date.getFullYear();
+var arr=["Mon","Tues","Wed","Thrus","Fri","Satur","Sun"]
+var arr2=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+document.getElementsByClassName('clock')[0].innerHTML=`<h1 class="sh1">${hour}:${min}:${sec}<span class="sp1">pm</span></h1>:<h2 class="sh2">${arr[da]}:${arr2[month]}:${dat}</h2>`
+}
+</script>
+</html>
